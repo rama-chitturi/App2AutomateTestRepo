@@ -96,7 +96,7 @@ public class BaseConfig {
 
 	public ArrayList<Object> excelGetData(String sheetName, int rowNum, int colNum) throws InvalidFormatException, IOException
 	{
-		File excelFile = new File("G://TestData_WebApp.xlsx");
+		File excelFile = new File("Files\\ExcelFiles\\TestData_WebApp.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(excelFile);
 		XSSFSheet sheet = workbook.getSheet(sheetName);
 		XSSFRow row ;
@@ -119,7 +119,7 @@ public class BaseConfig {
 
 	public void excelSetData(String sheetName, int rowNum, int colNum, String receivedData) throws InvalidFormatException, IOException
 	{
-		File excelFile = new File("G://TestData_WebApp.xlsx");
+		File excelFile = new File("Files\\ExcelFiles\\TestData_WebApp.xlsx");
 		FileInputStream fisObj = new FileInputStream(excelFile);
 		XSSFWorkbook workbook = new XSSFWorkbook(fisObj);
 		XSSFSheet sheet = workbook.getSheet(sheetName);

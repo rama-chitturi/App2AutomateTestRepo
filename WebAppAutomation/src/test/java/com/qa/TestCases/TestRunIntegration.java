@@ -14,7 +14,7 @@ import com.webapp.pages.HomePage;
 import com.webapp.pages.Page1HtmlElements;
 import com.webapp.pages.Page2HtmlElements;
 
-public class TestRunIntergration {
+public class TestRunIntegration {
 	
 	
 	BaseConfig baseObj;

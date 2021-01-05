@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.TestCases.TestRunUnit">
+      <class name="com.qa.TestCases.TestRunFunctional">
         <methods>
+          <include name="RunPage1Testcases"/>
+          <include name="runPage2TestCases"/>
           <include name="runCanvas"/>
         </methods>
-      </class> <!-- com.qa.TestCases.TestRunUnit -->
+      </class> <!-- com.qa.TestCases.TestRunFunctional -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
