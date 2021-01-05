@@ -22,10 +22,7 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 	public void triggerAllElements()
 	{
 		
-		textbox1Ele.sendKeys("Lachi");
-		textbox2Ele.sendKeys("coding");
-		emailCheckBtnEle.click();
-		driver.switchTo().alert().accept();
+		textbox1Ele.sendKeys("TestUsername");
 		textbox2Ele.sendKeys("rama@mail.com");
 		emailCheckBtnEle.click();
 		driver.switchTo().alert().accept();
@@ -56,6 +53,11 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 		driver.navigate().back();
 		CanvasMenuBtnEle.click();
 		driver.navigate().back();
+	}
+	
+	public void verifyUsername()
+	{
+		textbox1Ele.sendKeys("TestUsername");
 	}
 	
 	/**Validation of User entered Email address**/

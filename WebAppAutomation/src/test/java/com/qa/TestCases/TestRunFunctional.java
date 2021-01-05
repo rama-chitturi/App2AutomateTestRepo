@@ -42,6 +42,7 @@ public class TestRunFunctional {
 	{
 		 page1Obj  = new Page1HtmlElements();
 		 page1Obj.verifyMenuItemLinks();
+		 page1Obj.verifyUsername();
 		 page1Obj.verifyMailInput();
 		 page1Obj.verifyGroupRadioButton();
 		 page1Obj.verifyCheckBox();
