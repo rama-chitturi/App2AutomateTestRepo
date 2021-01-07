@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-<parameter name="selectInitialPage" value="htmlelements"></parameter>
-  
-  <test thread-count="5" name="AllUnitTest">
-   <classes>
-      <class name="com.qa.TestCases.TestRunUnit"/>
-    </classes>
-  </test> <!-- TestUnit -->
+	<parameter name="selectInitialPage" value="htmlelements"></parameter>
+
+	<test thread-count="5" name="AllUnitTest">
+		<classes>
+			<class name="com.qa.TestCases.TestRunUnit" />
+		</classes>
+	</test> <!-- TestUnit -->
 
 
-<test thread-count="5" name="AllIntegrationTest">
-    <classes>
-      <class name="com.qa.TestCases.TestRunIntegration"/>
-    </classes>
-  </test> <!-- TestIntegration -->
-   
-  
-<test thread-count="5" name="AllFucntionalTest">
-    <classes>
-      <class name="com.qa.TestCases.TestRunFunctional"/>
-    </classes>
-  </test> <!-- TestFunctional -->
+	<test thread-count="5" name="AllIntegrationTest">
+		<classes>
+			<class name="com.qa.TestCases.TestRunIntegration" />
+		</classes>
+	</test> <!-- TestIntegration -->
+
+
+	<test thread-count="5" name="AllFucntionalTest">
+		<classes>
+			<class name="com.qa.TestCases.TestRunFunctional" />
+		</classes>
+	</test> <!-- TestFunctional -->
+	
+	<listeners>
+		<listener class-name="com.qa.TestReports.ExtentReportFile" />
+	</listeners>
 
 </suite> <!-- Suite -->

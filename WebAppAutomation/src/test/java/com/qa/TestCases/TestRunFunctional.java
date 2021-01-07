@@ -17,29 +17,29 @@ import com.webapp.pages.Page2HtmlElements;
 
 public class TestRunFunctional {
 	
-	BaseConfig baseObj;
-	Page1HtmlElements page1Obj;
-	HomePage hpObj;
+	static BaseConfig baseObj;
+	static Page1HtmlElements page1Obj;
+	static HomePage hpObj;
 	Page2HtmlElements page2Obj;
 	CanvasPage canvasObj;
 	CanvasPageOtherMethods canvasOtherObj;
 	
 	@Test(priority=1, enabled = true)
-	public void rundriverConfig() throws IOException
+	public static void rundriverConfig() throws IOException
 	{
 		baseObj = new BaseConfig();
 		baseObj.driverConfig();
 	}
 	
 	@Test(priority=2, enabled=true)
-	public void runHomePage() throws IOException
+	public static void runHomePage() throws IOException
 	{
 		hpObj = new HomePage();
 		hpObj.pageClick("htmlelements");
 	}
 	
 	@Test(priority=3, enabled=true)
-	public void RunPage1Testcases() throws IOException, InvalidFormatException, InterruptedException
+	public static void RunPage1Testcases() throws IOException, InvalidFormatException, InterruptedException
 	{
 		 page1Obj  = new Page1HtmlElements();
 		 page1Obj.verifyMenuItemLinks();
@@ -79,6 +79,7 @@ public class TestRunFunctional {
 		canvasOtherObj.triggerAllCanvasMethods();
 		canvasOtherObj.verifyHomeNavigation();
 	}
+	
 	
 	@AfterTest
 	public void closeActiveBrowserWindow() throws IOException

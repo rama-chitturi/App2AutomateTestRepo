@@ -156,7 +156,6 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 	/** Verification of Dropdown all Items selection**/
 	public void verifyDropdownItems() 
 	{
-		
 		List<WebElement> dropdownListItems =  dropdownEle.findElements(By.tagName("option"));
 		int dropdownListItemLength = dropdownListItems.size();
 		int loopCount=0;

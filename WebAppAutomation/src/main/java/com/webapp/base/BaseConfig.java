@@ -5,11 +5,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
+import javax.net.ssl.HttpsURLConnection;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -50,7 +58,7 @@ public class BaseConfig {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
-	
+
 	public void driverConfigWithURL(String url)
 	{
 		System.setProperty("webdriver.chrome.driver", "Drivers//chromedriver.exe");
@@ -108,14 +116,14 @@ public class BaseConfig {
 		{
 			row=sheet.getRow(rowNum);
 			try {
-			cell = row.getCell(colNum);
-			storeTestdata = cell.toString();
+				cell = row.getCell(colNum);
+				storeTestdata = cell.toString();
 			}
 			catch(NullPointerException e)
 			{
 				storeTestdata = "";
 			}
-			
+
 			data.add(rowCount,storeTestdata);
 			rowCount++;
 			rowNum++;
@@ -141,14 +149,60 @@ public class BaseConfig {
 	{
 		ele.click();
 	}
-	
+
 	public void navigateBack()
 	{
 		driver.navigate().back();
 	}
-	
+
 	public void closeBrowserWindow()
 	{
 		driver.close();
 	}
+
+	public void verifyBrokenLinks() throws MalformedURLException, IOException
+	{
+		String[] pagenameList = {"HomePage","WebPageElements1","WebPageElements2","Canvas"};
+		int loopCount =0;
+		while(loopCount<pagenameList.length)
+		{
+			pageLinkValidation(pagenameList[loopCount]);
+			loopCount++;
+		}
+	}
+
+	public void pageLinkValidation(String pagename) throws MalformedURLException, IOException
+	{
+		String navigateURL="https://rama-chitturi.github.io/App2AutomateRepo/WebSite2Automate/Pages/"+pagename+".html";
+		driver.get(navigateURL);
+		List<WebElement> links = driver.findElements(By.tagName("a"));
+
+		int loopCount=0;
+		System.out.println(links.size());
+
+		while(loopCount<links.size())
+		{
+			String url = links.get(loopCount).getAttribute("href");
+
+			HttpURLConnection hucObj = null;
+			int pagResponseCode = 200;
+			hucObj = (HttpURLConnection)(new URL(url).openConnection());
+			hucObj.setRequestMethod("HEAD");
+			hucObj.connect();
+
+			pagResponseCode = hucObj.getResponseCode();
+
+			if(pagResponseCode == 200){
+				System.out.println("Valid link: " + url);
+			}
+			else if(pagResponseCode == 400 || pagResponseCode == 404 || pagResponseCode == 500 || pagResponseCode == 401)
+
+				System.out.println("Invalid link: "+url);
+			else
+				System.out.println("Something went wrong with: "+ url);
+
+			loopCount++;
+		}
+	}
+
 }

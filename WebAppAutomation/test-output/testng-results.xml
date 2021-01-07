@@ -1,33 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="15" passed="15">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34757" started-at="2021-01-05T23:24:58 IST" finished-at="2021-01-05T23:25:33 IST">
+  <suite name="Suite" duration-ms="171099" started-at="2021-01-07T17:01:29 IST" finished-at="2021-01-07T17:04:20 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34757" started-at="2021-01-05T23:24:58 IST" finished-at="2021-01-05T23:25:33 IST">
-      <class name="com.qa.TestCases.TestRunFunctional">
-        <test-method status="PASS" signature="rundriverConfig()[pri:1, instance:com.qa.TestCases.TestRunFunctional@4d95d2a2]" name="rundriverConfig" duration-ms="6576" started-at="2021-01-05T23:24:58 IST" finished-at="2021-01-05T23:25:05 IST">
+    <test name="AllUnitTest" duration-ms="72449" started-at="2021-01-07T17:01:29 IST" finished-at="2021-01-07T17:02:41 IST">
+      <class name="com.qa.TestCases.TestRunUnit">
+        <test-method status="PASS" signature="rundriverConfig()[pri:1, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="rundriverConfig" duration-ms="12394" started-at="2021-01-07T17:01:29 IST" finished-at="2021-01-07T17:01:41 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- rundriverConfig -->
-        <test-method status="PASS" signature="runHomePage()[pri:2, instance:com.qa.TestCases.TestRunFunctional@4d95d2a2]" name="runHomePage" duration-ms="619" started-at="2021-01-05T23:25:05 IST" finished-at="2021-01-05T23:25:05 IST">
+        <test-method status="PASS" signature="runSelectInitialPage(java.lang.String)[pri:2, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="runSelectInitialPage" duration-ms="1235" started-at="2021-01-07T17:01:41 IST" finished-at="2021-01-07T17:01:43 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[htmlelements]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runHomePage -->
-        <test-method status="PASS" signature="RunPage1Testcases()[pri:3, instance:com.qa.TestCases.TestRunFunctional@4d95d2a2]" name="RunPage1Testcases" duration-ms="10869" started-at="2021-01-05T23:25:05 IST" finished-at="2021-01-05T23:25:16 IST">
+        </test-method> <!-- runSelectInitialPage -->
+        <test-method status="PASS" signature="runUnitTestPage1Ele(java.lang.String, java.lang.String)[pri:3, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="runUnitTestPage1Ele" duration-ms="2908" started-at="2021-01-07T17:01:43 IST" data-provider="userCredentials" finished-at="2021-01-07T17:01:45 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Tester_Unit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Tester2@test.com]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RunPage1Testcases -->
-        <test-method status="PASS" signature="runPage2TestCases()[pri:4, instance:com.qa.TestCases.TestRunFunctional@4d95d2a2]" name="runPage2TestCases" duration-ms="13460" started-at="2021-01-05T23:25:16 IST" finished-at="2021-01-05T23:25:30 IST">
+        </test-method> <!-- runUnitTestPage1Ele -->
+        <test-method status="PASS" signature="runUnitTestPage2Ele()[pri:4, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="runUnitTestPage2Ele" duration-ms="25847" started-at="2021-01-07T17:01:45 IST" finished-at="2021-01-07T17:02:11 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runPage2TestCases -->
-        <test-method status="PASS" signature="runCanvas()[pri:5, instance:com.qa.TestCases.TestRunFunctional@4d95d2a2]" name="runCanvas" duration-ms="3170" started-at="2021-01-05T23:25:30 IST" finished-at="2021-01-05T23:25:33 IST">
+        </test-method> <!-- runUnitTestPage2Ele -->
+        <test-method status="PASS" signature="runCanvas()[pri:5, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="runCanvas" duration-ms="28990" started-at="2021-01-07T17:02:11 IST" finished-at="2021-01-07T17:02:40 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCanvas -->
+        <test-method status="PASS" signature="closeActiveBrowserWindow()[pri:0, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="closeActiveBrowserWindow" is-config="true" duration-ms="924" started-at="2021-01-07T17:02:40 IST" finished-at="2021-01-07T17:02:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeActiveBrowserWindow -->
+      </class> <!-- com.qa.TestCases.TestRunUnit -->
+    </test> <!-- AllUnitTest -->
+    <test name="AllIntegrationTest" duration-ms="36958" started-at="2021-01-07T17:02:42 IST" finished-at="2021-01-07T17:03:19 IST">
+      <class name="com.qa.TestCases.TestRunIntegration">
+        <test-method status="PASS" signature="rundriverConfig()[pri:1, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="rundriverConfig" duration-ms="9928" started-at="2021-01-07T17:02:42 IST" finished-at="2021-01-07T17:02:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- rundriverConfig -->
+        <test-method status="PASS" signature="runHomePage(java.lang.String)[pri:2, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="runHomePage" duration-ms="1041" started-at="2021-01-07T17:02:52 IST" finished-at="2021-01-07T17:02:53 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[htmlelements]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runHomePage -->
+        <test-method status="PASS" signature="runIntegrationTestPage1Ele(java.lang.String, java.lang.String)[pri:3, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="runIntegrationTestPage1Ele" duration-ms="4239" started-at="2021-01-07T17:02:53 IST" data-provider="userCredentials" finished-at="2021-01-07T17:02:57 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Tester_Integration]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Tester@test.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runIntegrationTestPage1Ele -->
+        <test-method status="PASS" signature="runIntegrationTestPage2Ele()[pri:4, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="runIntegrationTestPage2Ele" duration-ms="16402" started-at="2021-01-07T17:02:57 IST" finished-at="2021-01-07T17:03:14 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runIntegrationTestPage2Ele -->
+        <test-method status="PASS" signature="runCanvas()[pri:5, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="runCanvas" duration-ms="2838" started-at="2021-01-07T17:03:14 IST" finished-at="2021-01-07T17:03:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCanvas -->
+        <test-method status="PASS" signature="closeActiveBrowserWindow()[pri:0, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="closeActiveBrowserWindow" is-config="true" duration-ms="2485" started-at="2021-01-07T17:03:17 IST" finished-at="2021-01-07T17:03:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeActiveBrowserWindow -->
+      </class> <!-- com.qa.TestCases.TestRunIntegration -->
+    </test> <!-- AllIntegrationTest -->
+    <test name="AllFucntionalTest" duration-ms="60782" started-at="2021-01-07T17:03:19 IST" finished-at="2021-01-07T17:04:20 IST">
+      <class name="com.qa.TestCases.TestRunFunctional">
+        <test-method status="PASS" signature="rundriverConfig()[pri:1, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="rundriverConfig" duration-ms="9993" started-at="2021-01-07T17:03:19 IST" finished-at="2021-01-07T17:03:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- rundriverConfig -->
+        <test-method status="PASS" signature="runHomePage()[pri:2, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="runHomePage" duration-ms="1970" started-at="2021-01-07T17:03:29 IST" finished-at="2021-01-07T17:03:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runHomePage -->
+        <test-method status="PASS" signature="RunPage1Testcases()[pri:3, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="RunPage1Testcases" duration-ms="16714" started-at="2021-01-07T17:03:31 IST" finished-at="2021-01-07T17:03:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunPage1Testcases -->
+        <test-method status="PASS" signature="runPage2TestCases()[pri:4, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="runPage2TestCases" duration-ms="28934" started-at="2021-01-07T17:03:48 IST" finished-at="2021-01-07T17:04:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runPage2TestCases -->
+        <test-method status="PASS" signature="runCanvas()[pri:5, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="runCanvas" duration-ms="2980" started-at="2021-01-07T17:04:17 IST" finished-at="2021-01-07T17:04:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCanvas -->
+        <test-method status="PASS" signature="closeActiveBrowserWindow()[pri:0, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="closeActiveBrowserWindow" is-config="true" duration-ms="174" started-at="2021-01-07T17:04:20 IST" finished-at="2021-01-07T17:04:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeActiveBrowserWindow -->
       </class> <!-- com.qa.TestCases.TestRunFunctional -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- AllFucntionalTest -->
+  </suite> <!-- Suite -->
 </testng-results>

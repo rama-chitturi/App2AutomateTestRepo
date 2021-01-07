@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="ReTestfor#1And#2">
+		<groups>
+			<define name="totalConfirmation">
+				<include name="smoke"></include>
+				<include name="regression"></include>
+			</define>
+			<run>
+				<include name="sanity"></include>
+				<include name="totalConfirmation"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.qa.TestCases.TestRunConfirmation" />
+		</classes>
+	</test> <!-- Re- Test -->
+
+	<listeners>
+		<listener class-name="com.qa.TestReports.ExtentReportFile" />
+	</listeners>
+</suite>
