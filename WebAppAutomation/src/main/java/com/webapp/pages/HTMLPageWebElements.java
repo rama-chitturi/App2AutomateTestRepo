@@ -20,26 +20,27 @@ public class HTMLPageWebElements extends BaseConfig {
    @FindBy(xpath= ".//div[@class=\"topnav\"]/a[text()=\"Basic Elements Page\"]")
    WebElement basicEleMenuBtnEle;   
    @FindBy(xpath=".//div[@class=\"topnav\"]/a[text()=\"About\"]")
-   WebElement AboutMenuBtnEle;
+   WebElement aboutMenuBtnEle;
    @FindBy(xpath=".//div[@class=\"topnav\"]/a[text()=\"Back to Home\"]")
-   WebElement HomeMenuBtnEle;
+   WebElement homeMenuBtnEle;
    @FindBy(xpath=".//div[@class=\"topnav\"]/a[text()=\"Canvas Page\"]")
-   WebElement CanvasMenuBtnEle;
+   WebElement canvasMenuBtnEle;
+   
+   @FindBy(id="elementsDiv")
+   WebElement elementsDiv;
    
    
-   
-   
-@FindBy(xpath =".//input[contains(@placeholder,\"nick name\")]")
-WebElement textbox1Ele;
-@FindBy(xpath =".//input[contains(@placeholder,\"nick name\")]/following::input")
-WebElement textbox2Ele;
+@FindBy(xpath =".//input[contains(@placeholder,\"user name\")]")
+WebElement userNameEle;
+@FindBy(xpath =".//input[contains(@placeholder,\"user name\")]/following::input")
+WebElement mailIdEle;
 @FindBy(xpath=".//button[@type=\"submit\"]")
 WebElement emailCheckBtnEle;
    
    @FindBy(id="Radio1")
-   WebElement RadioBtn1Ele;
+   WebElement radioBtn1Ele;
    @FindBy(id="Radio2")
-   WebElement RadioBtn2Ele;
+   WebElement radioBtn2Ele;
    @FindBy(id="Checkbox1")
    WebElement checkBox1Ele;
    @FindBy(id="Checkbox2")

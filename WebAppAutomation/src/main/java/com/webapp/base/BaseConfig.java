@@ -107,8 +107,15 @@ public class BaseConfig {
 		while(rowCount<sheet.getLastRowNum())
 		{
 			row=sheet.getRow(rowNum);
-			cell =  row.getCell(colNum);
+			try {
+			cell = row.getCell(colNum);
 			storeTestdata = cell.toString();
+			}
+			catch(NullPointerException e)
+			{
+				storeTestdata = "";
+			}
+			
 			data.add(rowCount,storeTestdata);
 			rowCount++;
 			rowNum++;
@@ -138,5 +145,10 @@ public class BaseConfig {
 	public void navigateBack()
 	{
 		driver.navigate().back();
+	}
+	
+	public void closeBrowserWindow()
+	{
+		driver.close();
 	}
 }

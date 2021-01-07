@@ -4,7 +4,8 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.webapp.base.BaseConfig;
@@ -25,7 +26,7 @@ public class TestRunIntegration {
 	CanvasPage canvasObj;
 	CanvasPageOtherMethods canvasOtherObj;
 	
-	@BeforeSuite
+	@Test(priority=1, enabled=true)
 	public void rundriverConfig() throws IOException
 	{
 		baseObj = new BaseConfig();
@@ -33,27 +34,27 @@ public class TestRunIntegration {
 	}
 	
 	@Test(priority=2, enabled=true)
-	public void runHomePage() throws IOException
+	@Parameters("selectInitialPage")
+	public void runHomePage(String selectInitialPage) throws IOException
 	{
 		hpObj = new HomePage();
-		hpObj.pageClick("htmlelements");
+		hpObj.pageClick(selectInitialPage);
 	}
 	
 	
-	@Test(priority=3, enabled=true)
-	public void runHtmlElements() throws IOException
+	@Test(priority=3, enabled=true, dataProvider="userCredentials", dataProviderClass=DataProviderFile.class)
+	public void runIntegrationTestPage1Ele(String userNameData, String userEmailData) throws IOException
 	{
 		page1Obj =  new Page1HtmlElements();
-		page1Obj.triggerAllElements();
+		page1Obj.triggerAllElements(userNameData, userEmailData);
 	}
 	
 	@Test(priority=4, enabled=true)
-	public void runHtmlAdvElements() throws IOException, InterruptedException, AWTException
+	public void runIntegrationTestPage2Ele() throws IOException, InterruptedException, AWTException
 	{
 		page2Obj = new Page2HtmlElements();
 		baseObj = new BaseConfig();
 		page1Obj = new Page1HtmlElements();
-		
 		page2Obj.triggerAllAdvElements();
 		baseObj.navigateBack();
 		page1Obj.pageClick("canvas");
@@ -67,6 +68,13 @@ public class TestRunIntegration {
 		canvasOtherObj = new CanvasPageOtherMethods();
 		canvasOtherObj.triggerAllCanvasMethods();
 		canvasOtherObj.verifyHomeNavigation();
+	}
+	
+	@AfterTest
+	public void closeActiveBrowserWindow() throws IOException
+	{
+		baseObj = new BaseConfig();
+		baseObj.closeBrowserWindow();
 	}
 
 }

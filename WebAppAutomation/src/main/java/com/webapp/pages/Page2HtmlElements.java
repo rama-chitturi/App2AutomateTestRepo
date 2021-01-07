@@ -17,7 +17,6 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 	
 	public void triggerAllAdvElements() throws InterruptedException, IOException, AWTException
 	{
-		
 		Actions actObj = new Actions(driver);
 		actObj.moveToElement(sideMenuAboutEle, 80,0).click().release().perform();
 		driver.navigate().back();

@@ -19,15 +19,15 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 	}
 	
 	/**Trigger method to check all elements basic fucntionality **/
-	public void triggerAllElements()
+	public void triggerAllElements(String userNameData, String userEmailData)
 	{
 		
-		textbox1Ele.sendKeys("TestUsername");
-		textbox2Ele.sendKeys("rama@mail.com");
+		userNameEle.sendKeys(userNameData);
+		mailIdEle.sendKeys(userEmailData);
 		emailCheckBtnEle.click();
 		driver.switchTo().alert().accept();
-		RadioBtn1Ele.click();
-		RadioBtn2Ele.click();
+		radioBtn1Ele.click();
+		radioBtn2Ele.click();
 		checkBox1Ele.click();
 		checkBox2Ele.click();
 		Select scObj= new Select(dropdownEle);
@@ -47,51 +47,93 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 	{
 		basicEleMenuBtnEle.click();
 		driver.navigate().back();
-		AboutMenuBtnEle.click();
+		aboutMenuBtnEle.click();
 		driver.navigate().back();
-		HomeMenuBtnEle.click();
+		homeMenuBtnEle.click();
 		driver.navigate().back();
-		CanvasMenuBtnEle.click();
+		canvasMenuBtnEle.click();
 		driver.navigate().back();
 	}
 	
-	public void verifyUsername()
-	{
-		textbox1Ele.sendKeys("TestUsername");
-	}
-	
-	/**Validation of User entered Email address**/
-	public void verifyMailInput() throws InvalidFormatException, IOException
-	{
-		ArrayList<Object> TestData	= excelGetData("TestData1", 1, 0);
-		String TestDataResult, alertMessage;
-		int dataCount=0;
-		while(dataCount<TestData.size())
-		{
-			textbox2Ele.clear();
-			textbox2Ele.sendKeys(TestData.get(dataCount).toString());
-			emailCheckBtnEle.click();
-				
-			alertMessage = driver.switchTo().alert().getText();
 		
-			if(alertMessage.equalsIgnoreCase("Valid email address!"))
-				TestDataResult= "Pass";
-			else
-				TestDataResult= "Fail";
+	/**Validation of User entered Email address**/
+	public void verifyUserCredential() throws InvalidFormatException, IOException
+	{
+		ArrayList<Object> userNameTestData	= excelGetData("TestData1", 1, 1);
+		ArrayList<Object> userEmailTestData	= excelGetData("TestData1", 1, 3);
+		
+		String emailTestDataResult = null, nameTestDataResult = null, alertMessage;
+		int dataCount=0;
+		while((dataCount<userNameTestData.size())||(dataCount<userEmailTestData.size()) )
+		{
+			userNameEle.clear();
+			mailIdEle.clear();
+			try {
+			userNameEle.sendKeys(userNameTestData.get(dataCount).toString());
+			}
+			catch(NullPointerException e)
+			{
+				userNameEle.sendKeys("");
+			}
+			try 
+			{
+				mailIdEle.sendKeys(userEmailTestData.get(dataCount).toString());
+			}
+			catch(NullPointerException e)
+			{
+				mailIdEle.sendKeys("");
+			}
 			
+			emailCheckBtnEle.click();
+			
+			alertMessage = driver.switchTo().alert().getText();
 			driver.switchTo().alert().accept();
-			excelSetData("TestData1", dataCount+1, 1, TestDataResult);
+			if(alertMessage.equalsIgnoreCase("Valid Credentails! Here you go!!") && elementsDiv.isDisplayed())
+			{
+				nameTestDataResult = "Testcase Passed";
+				emailTestDataResult= "Testcase Passed";
+			}
+			else if(alertMessage.equalsIgnoreCase("Please enter valid credentials"))
+			{
+				nameTestDataResult = "Testcase Failed";
+				emailTestDataResult= "Testcase Failed";
+			}
+			else if(alertMessage.equalsIgnoreCase("Please enter your EmailID"))
+			{
+				nameTestDataResult = "Testcase Passed";
+				emailTestDataResult= "Testcase Failed";
+			}
+			else if(alertMessage.equalsIgnoreCase("Please enter your prefered User name"))
+			{
+				nameTestDataResult = "Testcase Failed";
+				emailTestDataResult= "Testcase Passed";
+			}
+			else if(alertMessage.equalsIgnoreCase("You have entered an invalid email address!"))
+			{
+				nameTestDataResult = "Testcase Passed";
+				emailTestDataResult= "Testcase Failed";
+			}
+			else
+			{
+				nameTestDataResult = "Something went wrong";
+				emailTestDataResult= "Something went wrong";
+			}
+			
+			
+			excelSetData("TestData1", dataCount+1, 2, nameTestDataResult); //username
+			excelSetData("TestData1", dataCount+1, 4, emailTestDataResult); //email
 			dataCount++;
 		}
   }
+	
 
 	/** Verification of Group Radio button functionality**/
 	public void verifyGroupRadioButton()
 	{
-		RadioBtn1Ele.click();
-		RadioBtn2Ele.click();
+		radioBtn1Ele.click();
+		radioBtn2Ele.click();
 		
-		if(RadioBtn1Ele.isSelected() & RadioBtn2Ele.isSelected())
+		if(radioBtn1Ele.isSelected() & radioBtn2Ele.isSelected())
 			System.out.println("Selecting all radio buttons");
 		else
 			System.out.println("Group Radio button Selecting only one as expected");
@@ -167,7 +209,6 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 	public void verifyLinkNavigation()
 	{
 		advHtmlPageBtnEle.click();
-		System.out.println(driver.getCurrentUrl());
 		if(driver.getCurrentUrl().contains("WebPageElements2"))
 		{
 		System.out.println("Page navigated as expected");
@@ -184,13 +225,13 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 		switch(pageName)
 		{
 		case "about":
-			AboutMenuBtnEle.click();
+			aboutMenuBtnEle.click();
 			break;
 		case "home":
-			HomeMenuBtnEle.click();
+			homeMenuBtnEle.click();
 			break;
 		case "canvas":
-			CanvasMenuBtnEle.click();
+			canvasMenuBtnEle.click();
 			break;
 			
 		default:

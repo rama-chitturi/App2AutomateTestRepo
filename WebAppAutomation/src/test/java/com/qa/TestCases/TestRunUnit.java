@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.webapp.base.BaseConfig;
@@ -35,19 +37,23 @@ public class TestRunUnit {
 		baseObj.driverConfig();
 	}
 
-	
-	@Test(priority=3, enabled=true)
-	public void runHtmlElements() throws IOException
+	@Test(priority=2)
+	@Parameters("selectInitialPage")
+	public void runSelectInitialPage(String selectInitialPage) throws IOException
 	{
 		hpObj = new HomePage();
-		hpObj.pageClick("htmlelements");
+		hpObj.pageClick(selectInitialPage);
+	}
+	
+	@Test(priority=3, enabled=true, dataProvider="userCredentials", dataProviderClass=DataProviderFile.class)
+	public void runUnitTestPage1Ele(String userNameData, String userEmailData) throws IOException
+	{
 		page1Obj =  new Page1HtmlElements();
-		page1Obj.triggerAllElements();
-		
+		page1Obj.triggerAllElements(userNameData, userEmailData);
 	}
 	
 	@Test(priority=4, enabled=true)
-	public void runHtmlAdvElements() throws IOException, InterruptedException, AWTException
+	public void runUnitTestPage2Ele() throws IOException, InterruptedException, AWTException
 	{
 		
 		baseObj = new BaseConfig();
@@ -73,4 +79,10 @@ public class TestRunUnit {
 		canvasOtherObj.verifyHomeNavigation();
 	}
 
+	@AfterTest
+	public void closeActiveBrowserWindow() throws IOException
+	{
+		baseObj = new BaseConfig();
+		baseObj.closeBrowserWindow();
+	}
 }

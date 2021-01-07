@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.webapp.base.BaseConfig;
@@ -42,8 +43,7 @@ public class TestRunFunctional {
 	{
 		 page1Obj  = new Page1HtmlElements();
 		 page1Obj.verifyMenuItemLinks();
-		 page1Obj.verifyUsername();
-		 page1Obj.verifyMailInput();
+		 page1Obj.verifyUserCredential();
 		 page1Obj.verifyGroupRadioButton();
 		 page1Obj.verifyCheckBox();
 		 page1Obj.verifyDropdownItems();
@@ -78,6 +78,13 @@ public class TestRunFunctional {
 		canvasOtherObj = new CanvasPageOtherMethods();
 		canvasOtherObj.triggerAllCanvasMethods();
 		canvasOtherObj.verifyHomeNavigation();
+	}
+	
+	@AfterTest
+	public void closeActiveBrowserWindow() throws IOException
+	{
+		baseObj = new BaseConfig();
+		baseObj.closeBrowserWindow();
 	}
 	
 

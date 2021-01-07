@@ -26,9 +26,6 @@ public class HomePage extends BaseConfig
 	public HomePage()throws IOException 
 	{
 		PageFactory.initElements(driver, this);
-		System.out.println(driver.getTitle());
-		System.out.println("initalized landing page elements");
-		
 	}
 	
 	public void pageClick(String pageName)
