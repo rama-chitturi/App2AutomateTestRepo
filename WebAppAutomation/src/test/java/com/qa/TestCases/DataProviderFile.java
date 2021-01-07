@@ -14,7 +14,7 @@ public class DataProviderFile {
 			return new Object[][] {
 			{ "Tester_Integration", "Tester@test.com" }
 
-		};
+		}; 
 
 		else
 		{
