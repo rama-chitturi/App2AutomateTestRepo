@@ -61,6 +61,7 @@ public class TestRunFunctional {
 		page2Obj.verifySideMenuItemLinks();
 		page2Obj.verifyModalButton();
 		page2Obj.verifyAlertButton();
+		page2Obj.verifySnackBar();
 		page2Obj.verifyFlipcard();
 		page2Obj.verifyThumbSwitching();
 		page2Obj.verifySliderSwitching();

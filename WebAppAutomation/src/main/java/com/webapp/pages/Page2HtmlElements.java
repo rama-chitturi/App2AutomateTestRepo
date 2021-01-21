@@ -33,6 +33,8 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 		alertBtnEle.click();
 		driver.switchTo().alert().accept();
 		
+		snackBarBtnEle.click();
+				
 		actObj.moveToElement(flipCardFrontEle).build().perform();
 		getScreenshot(flipCardBackEle,"Flip_Card_Back_Image");
 		
@@ -87,6 +89,19 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 		if((alertTextEle.getText()).equalsIgnoreCase("You Selected Cancel!"))
 			System.out.println("Alert button selected with Cancel choice");			
 	}
+	
+	public void verifySnackBar()
+	{
+		snackBarBtnEle.click();
+		String snackbarText = snackBarTextEle.getText();
+		if(snackbarText.equalsIgnoreCase("Here is a Snack bar!"));
+			System.out.println("Snack barText matched as expected");
+		if(snackBarTextEle.isDisplayed())
+			System.out.println("snack bar is displayed as expected.");
+		else
+			System.out.println("snack bar is not displayed");
+	}
+	
 	/** Verifucation of Card flippling and get Screenshot**/
 	public void verifyFlipcard() throws IOException, InterruptedException
 	{

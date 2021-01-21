@@ -103,6 +103,10 @@ WebElement emailCheckBtnEle;
    WebElement alertBtnEle;
    @FindBy(xpath=".//p[@id=\"ALertText\"]")
    WebElement alertTextEle;
+   @FindBy(xpath=".//button[@id=\"snackBarBtn\"]")
+   WebElement snackBarBtnEle;
+   @FindBy(id="snackbar")
+   WebElement snackBarTextEle;
    
   
    @FindBy(xpath=".//div[@class=\"flip-card\"]//div[@class=\"flip-card-front\"]")

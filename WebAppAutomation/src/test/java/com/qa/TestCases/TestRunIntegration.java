@@ -29,6 +29,7 @@ public class TestRunIntegration {
 	@Test(priority=1, enabled=true)
 	public void rundriverConfig() throws IOException
 	{
+		System.out.println("rundriverConfig");
 		baseObj = new BaseConfig();
 		baseObj.driverConfig();
 	}
@@ -37,6 +38,7 @@ public class TestRunIntegration {
 	@Parameters("selectInitialPage")
 	public void runHomePage(String selectInitialPage) throws IOException
 	{
+		System.out.println("runHomePage");
 		hpObj = new HomePage();
 		hpObj.pageClick(selectInitialPage);
 	}
@@ -47,14 +49,17 @@ public class TestRunIntegration {
 	{
 		page1Obj =  new Page1HtmlElements();
 		page1Obj.triggerAllElements(userNameData, userEmailData);
+		
 	}
 	
 	@Test(priority=4, enabled=true)
 	public void runIntegrationTestPage2Ele() throws IOException, InterruptedException, AWTException
 	{
+		System.out.println("runIntegrationTestPage2Ele");
 		page2Obj = new Page2HtmlElements();
 		baseObj = new BaseConfig();
 		page1Obj = new Page1HtmlElements();
+		
 		page2Obj.triggerAllAdvElements();
 		baseObj.navigateBack();
 		page1Obj.pageClick("canvas");
@@ -64,17 +69,18 @@ public class TestRunIntegration {
 	@Test(priority=5, enabled=true)
 	public void runCanvas() throws IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InterruptedException
 	{
+		System.out.println("runCanvas");
 		canvasObj = new CanvasPage();
 		canvasOtherObj = new CanvasPageOtherMethods();
 		canvasOtherObj.triggerAllCanvasMethods();
 		canvasOtherObj.verifyHomeNavigation();
 	}
 	
-	@AfterTest
-	public void closeActiveBrowserWindow() throws IOException
-	{
-		baseObj = new BaseConfig();
-		baseObj.closeBrowserWindow();
-	}
+//	@AfterTest
+//	public void closeActiveBrowserWindow() throws IOException
+//	{
+//		baseObj = new BaseConfig();
+//		baseObj.closeBrowserWindow();
+//	}
 
 }
