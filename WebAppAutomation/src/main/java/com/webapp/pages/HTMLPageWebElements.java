@@ -83,10 +83,10 @@ WebElement emailCheckBtnEle;
    WebElement sideMenucontactEle;
    
  
-   @FindBy(id="drag1")
-   WebElement imageTodragEle;
-   @FindBy(id="dragNdrop")
-   WebElement imageTodropEle;
+   @FindBy(id="draggable")
+   WebElement dragEle;
+   @FindBy(id="droppable")
+   WebElement dropEle;
    
    @FindBy(id="myBtn")
    WebElement modalBtnEle;

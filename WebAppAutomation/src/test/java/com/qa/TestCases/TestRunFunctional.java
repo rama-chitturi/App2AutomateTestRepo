@@ -59,6 +59,7 @@ public class TestRunFunctional {
 		page1Obj  = new Page1HtmlElements();
 		
 		page2Obj.verifySideMenuItemLinks();
+		page2Obj.verifyDragNDrop();
 		page2Obj.verifyModalButton();
 		page2Obj.verifyAlertButton();
 		page2Obj.verifySnackBar();

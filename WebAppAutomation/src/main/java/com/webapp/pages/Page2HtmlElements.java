@@ -10,11 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class Page2HtmlElements extends HTMLPageWebElements {
-	
+
 	public Page2HtmlElements() throws IOException {
 		HTMLPageWebElements advhtmlObj = new HTMLPageWebElements();
 	}
-	
+
 	public void triggerAllAdvElements() throws InterruptedException, IOException, AWTException
 	{
 		Actions actObj = new Actions(driver);
@@ -26,33 +26,36 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 		driver.navigate().back();
 		actObj.moveToElement(sideMenucontactEle, 80,0).click().release().perform();
 		driver.navigate().back();
-	
+
+
+		actObj.clickAndHold(dragEle).moveToElement(dropEle).release().build().perform();
+
 		modalBtnEle.click();
 		modalCloseBtnEle.click();
-		
+
 		alertBtnEle.click();
 		driver.switchTo().alert().accept();
-		
+
 		snackBarBtnEle.click();
-				
+
 		actObj.moveToElement(flipCardFrontEle).build().perform();
 		getScreenshot(flipCardBackEle,"Flip_Card_Back_Image");
-		
+
 		thumbsUpBtnEle.click();
 		thumbsDownBtnEle.click();
-		
+
 		sliderSwitchBtnEle.click();
-		
+
 		openChatBtnEle.click();
 		msgTextAreaEle.sendKeys("A Big Hi to you!");
 		sendBtnEle.click();
 		driver.navigate().back();
 		openChatBtnEle.click();
 		closeBtnEle.click();
-		
+
 		searchBarEle.sendKeys("Test");
 	}
-	
+
 	/** Verifying All Side Hover menu Items Navigations**/
 	public void verifySideMenuItemLinks()
 	{
@@ -67,6 +70,16 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 		driver.navigate().back();
 	}
 
+	public void verifyDragNDrop() throws IOException
+	{
+		Actions actObj = new Actions(driver);
+		actObj.clickAndHold(dragEle).moveToElement(dropEle).release().build().perform();
+		getScreenshot(dropEle, "dragged");
+		if(dropEle.getText().equalsIgnoreCase("Dropped!"))
+			System.out.println("Card is successfully dropped to destination as expected");
+		else
+			System.out.println("Card is not dropped to destination");
+	}
 	/**Verifying Modal open and close(By cliking on X and outside of modal) **/
 	public void verifyModalButton() 
 	{
@@ -89,19 +102,19 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 		if((alertTextEle.getText()).equalsIgnoreCase("You Selected Cancel!"))
 			System.out.println("Alert button selected with Cancel choice");			
 	}
-	
+
 	public void verifySnackBar()
 	{
 		snackBarBtnEle.click();
 		String snackbarText = snackBarTextEle.getText();
 		if(snackbarText.equalsIgnoreCase("Here is a Snack bar!"));
-			System.out.println("Snack barText matched as expected");
+		System.out.println("Snack barText matched as expected");
 		if(snackBarTextEle.isDisplayed())
 			System.out.println("snack bar is displayed as expected.");
 		else
 			System.out.println("snack bar is not displayed");
 	}
-	
+
 	/** Verifucation of Card flippling and get Screenshot**/
 	public void verifyFlipcard() throws IOException, InterruptedException
 	{
@@ -206,9 +219,9 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 			System.out.println("Back Arrow navigation is as unexpected");
 	}
 
-	
-	
-	}  
-	
+
+
+}  
+
 
 
