@@ -180,11 +180,17 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 		closeBtnEle.click();
 	}
 
-	/** Verification of Search functionality among Table data **/ 
-	public void verifySearchFucntionality()
+	/** Verify search bar input **/
+	public void verifySearchBar(String DataToSearch)
 	{
-		String DataToSearch = "Test";
 		searchBarEle.sendKeys(DataToSearch);
+	}
+	
+	
+	/** Verification of Search functionality among Table data **/ 
+	public void verifySearchFucntionality(String dataTosearch)
+	{
+		//Fetch table content 
 		List<WebElement> tableSearchList = driver.findElements(By.xpath(".//table[@id=\"myTable\"]//tr/td"));
 		int tableSearchListLength, listItemcount=0, searchCount=0;
 		List<String> searchedData = new ArrayList<>();
@@ -199,15 +205,15 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 
 		for(int loopcount=0;loopcount<tableSearchListLength;loopcount++)
 		{
-			if((searchedData.get(loopcount)).contains(DataToSearch))
+			if((searchedData.get(loopcount)).contains(dataTosearch))
 			{
-				System.out.println("Filtered data " +searchedData.get(loopcount)+" is matched with search keyword "+DataToSearch+" as expected");
+				System.out.println("Filtered data " +searchedData.get(loopcount)+" is matched with search keyword "+dataTosearch+" as expected");
 				searchCount++;
 			}
 			else
-				System.out.println("Filtered data " +searchedData.get(loopcount)+" is not matched with search keyword "+DataToSearch);
+				System.out.println("Filtered data " +searchedData.get(loopcount)+" is not matched with search keyword "+dataTosearch);
 		}
-		System.out.println("Total matches with Search keyword:"+DataToSearch+" are "+searchCount);
+		System.out.println("Total matches with Search keyword:"+dataTosearch+" are "+searchCount);
 	}
 
 	public void verifyBackArrowNavigation()
@@ -219,6 +225,7 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 			System.out.println("Back Arrow navigation is as unexpected");
 	}
 
+	
 
 
 }  

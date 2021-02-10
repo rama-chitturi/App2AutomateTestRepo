@@ -11,10 +11,12 @@ public class DataProviderFile {
 	public static Object[][] userCrdentaislData(Method method)
 	{
 		if(method.getName().equalsIgnoreCase("runIntegrationTestPage1Ele"))
+		{
 			return new Object[][] {
-			{ "Tester_Integration", "Tester@test.com" }
-
+			{ "Tester_Integration", "Tester@test.com" },
 		}; 
+		
+		}
 
 		else
 		{
@@ -24,5 +26,8 @@ public class DataProviderFile {
 			};
 		}
 	}
+	
+	
+
 
 }
