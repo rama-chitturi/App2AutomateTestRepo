@@ -55,8 +55,17 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 		driver.navigate().back();
 	}
 	
+	/** Validation of user credentials from given data **/
+	
+	public void verifyUserCredential(String username, String email)
+	{
+		userNameEle.sendKeys(username);
+		mailIdEle.sendKeys(email);
+		emailCheckBtnEle.click();
+		driver.switchTo().alert().accept();
+	}
 		
-	/**Validation of User entered Email address**/
+	/**Validation of User credentials using data-driven**/
 	public void verifyUserCredential() throws InvalidFormatException, IOException
 	{
 		ArrayList<Object> userNameTestData	= excelGetData("TestData1", 1, 1);

@@ -12,28 +12,32 @@ import org.testng.annotations.Test;
 import com.webapp.base.BaseConfig;
 import com.webapp.pages.Page1HtmlElements;
 
-public class TestRunConfirmation {
+public class TestRunConfirmation   {
 
 	Page1HtmlElements page1Obj;
 	BaseConfig bcObj ;
-	
+	TestRunFunctional trfObj;
+
+
 	@Test(groups= {"sanity"})
 	public void verifyCredentialsValidation() throws IOException, InvalidFormatException
 	{
-		 TestRunFunctional.rundriverConfig();
-		 TestRunFunctional.runHomePage();
-		 page1Obj  = new Page1HtmlElements();
-		 page1Obj.verifyUserCredential();
+		trfObj = new TestRunFunctional();
+		trfObj.rundriverConfig();
+		trfObj.runHomePage();
+		page1Obj  = new Page1HtmlElements();
+		page1Obj.verifyUserCredential();
 	}
-	
+
 	@Test(groups="regression")
 	public void verifyCredentialsDependency() throws IOException, InvalidFormatException, InterruptedException
 	{
-		 TestRunFunctional.rundriverConfig();
-		 TestRunFunctional.runHomePage();
-		 TestRunFunctional.RunPage1Testcases();
+		trfObj = new TestRunFunctional();
+		trfObj.rundriverConfig();
+		trfObj.runHomePage();
+		trfObj.RunPage1Testcases();
 	}
-	
+
 	@Test(groups="smoke")
 	public void verifybrokenLinks() throws MalformedURLException, IOException
 	{
@@ -41,8 +45,8 @@ public class TestRunConfirmation {
 		bcObj.driverConfig();
 		bcObj.verifyBrokenLinks();
 	}
-	
-	
+
+
 	@AfterMethod
 	public void closeActiveBrowserWindow() throws IOException
 	{

@@ -30,29 +30,40 @@ public class CanvasPageOtherMethods extends HTMLPageWebElements{
 		{
 		case "brown":
 			pickColorEle.get(0).click();
+			break;
 		case "orange":
 			pickColorEle.get(1).click();
+			break;
 		case "purple":
 			pickColorEle.get(2).click();
+			break;
 		case "skyBlue":
 			pickColorEle.get(3).click();
+			break;
 		case "rosy":
 			pickColorEle.get(4).click();
+			break;
 		case "slateGrey":
 			pickColorEle.get(5).click();
-
+			break;
 		case "seaGreen":
 			pickColorEle.get(6).click();
+			break;
 		case "red":
 			pickColorEle.get(7).click();
+			break;
 		case "green":
 			pickColorEle.get(8).click();
+			break;
 		case "mustard":
 			pickColorEle.get(9).click();
+			break;
 		case "lightGrey":
 			pickColorEle.get(10).click();
+			break;
 		case "blue":
 			pickColorEle.get(11).click();
+			break;
 		default:
 			pickColorEle.get(6).click();
 

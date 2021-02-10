@@ -69,6 +69,7 @@ public class CanvasPage extends HTMLPageWebElements{
 		moveByOffset(100,0).
 		moveByOffset(-50, 50).
 		moveByOffset(50,50).release().perform();	
+		
 	}
 
 	public void drawCharVMethod()
