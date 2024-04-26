@@ -1,75 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="15" passed="15">
+<testng-results ignored="0" total="5" passed="1" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="171099" started-at="2021-01-07T17:01:29 IST" finished-at="2021-01-07T17:04:20 IST">
+  <suite started-at="2024-04-16T00:20:38 IST" name="Default suite" finished-at="2024-04-16T00:21:33 IST" duration-ms="54510">
     <groups>
     </groups>
-    <test name="AllUnitTest" duration-ms="72449" started-at="2021-01-07T17:01:29 IST" finished-at="2021-01-07T17:02:41 IST">
-      <class name="com.qa.TestCases.TestRunUnit">
-        <test-method status="PASS" signature="rundriverConfig()[pri:1, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="rundriverConfig" duration-ms="12394" started-at="2021-01-07T17:01:29 IST" finished-at="2021-01-07T17:01:41 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- rundriverConfig -->
-        <test-method status="PASS" signature="runSelectInitialPage(java.lang.String)[pri:2, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="runSelectInitialPage" duration-ms="1235" started-at="2021-01-07T17:01:41 IST" finished-at="2021-01-07T17:01:43 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[htmlelements]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runSelectInitialPage -->
-        <test-method status="PASS" signature="runUnitTestPage1Ele(java.lang.String, java.lang.String)[pri:3, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="runUnitTestPage1Ele" duration-ms="2908" started-at="2021-01-07T17:01:43 IST" data-provider="userCredentials" finished-at="2021-01-07T17:01:45 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Tester_Unit]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Tester2@test.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runUnitTestPage1Ele -->
-        <test-method status="PASS" signature="runUnitTestPage2Ele()[pri:4, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="runUnitTestPage2Ele" duration-ms="25847" started-at="2021-01-07T17:01:45 IST" finished-at="2021-01-07T17:02:11 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runUnitTestPage2Ele -->
-        <test-method status="PASS" signature="runCanvas()[pri:5, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="runCanvas" duration-ms="28990" started-at="2021-01-07T17:02:11 IST" finished-at="2021-01-07T17:02:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runCanvas -->
-        <test-method status="PASS" signature="closeActiveBrowserWindow()[pri:0, instance:com.qa.TestCases.TestRunUnit@6ee52dcd]" name="closeActiveBrowserWindow" is-config="true" duration-ms="924" started-at="2021-01-07T17:02:40 IST" finished-at="2021-01-07T17:02:41 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeActiveBrowserWindow -->
-      </class> <!-- com.qa.TestCases.TestRunUnit -->
-    </test> <!-- AllUnitTest -->
-    <test name="AllIntegrationTest" duration-ms="36958" started-at="2021-01-07T17:02:42 IST" finished-at="2021-01-07T17:03:19 IST">
+    <test started-at="2024-04-16T00:20:38 IST" name="Default test" finished-at="2024-04-16T00:21:33 IST" duration-ms="54510">
       <class name="com.qa.TestCases.TestRunIntegration">
-        <test-method status="PASS" signature="rundriverConfig()[pri:1, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="rundriverConfig" duration-ms="9928" started-at="2021-01-07T17:02:42 IST" finished-at="2021-01-07T17:02:52 IST">
+        <test-method signature="rundriverConfig()[pri:1, instance:com.qa.TestCases.TestRunIntegration@68999068]" started-at="2024-04-16T00:20:38 IST" name="rundriverConfig" finished-at="2024-04-16T00:20:59 IST" duration-ms="20949" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- rundriverConfig -->
-        <test-method status="PASS" signature="runHomePage(java.lang.String)[pri:2, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="runHomePage" duration-ms="1041" started-at="2021-01-07T17:02:52 IST" finished-at="2021-01-07T17:02:53 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[htmlelements]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="runHomePage(java.lang.String)[pri:2, instance:com.qa.TestCases.TestRunIntegration@68999068]" started-at="2024-04-16T00:20:59 IST" name="runHomePage" finished-at="2024-04-16T00:20:59 IST" duration-ms="0" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'selectInitialPage' is required by @Test on method runHomePage but has not been marked @Optional or defined
+in C:\Users\r.lakshmi.chitturi\AppData\Local\Temp\testng-eclipse--1830657774\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'selectInitialPage' is required by @Test on method runHomePage but has not been marked @Optional or defined
+in C:\Users\r.lakshmi.chitturi\AppData\Local\Temp\testng-eclipse--1830657774\testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:272)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:360)
+at org.testng.internal.Parameters.createParameters(Parameters.java:704)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:879)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:744)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:783)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runHomePage -->
-        <test-method status="PASS" signature="runIntegrationTestPage1Ele(java.lang.String, java.lang.String)[pri:3, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="runIntegrationTestPage1Ele" duration-ms="4239" started-at="2021-01-07T17:02:53 IST" data-provider="userCredentials" finished-at="2021-01-07T17:02:57 IST">
+        <test-method signature="runIntegrationTestPage1Ele(java.lang.String, java.lang.String)[pri:3, instance:com.qa.TestCases.TestRunIntegration@68999068]" started-at="2024-04-16T00:20:59 IST" name="runIntegrationTestPage1Ele" data-provider="userCredentials" finished-at="2024-04-16T00:21:17 IST" duration-ms="18306" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -82,50 +68,185 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":".//input[contains(@placeholder,"user name")]"}
+  (Session info: MicrosoftEdge=123.0.2420.97)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'BDC14-L-151FN8H', ip: '192.168.1.129', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 123.0.2420.97, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:49168}, msedge: {msedgedriverVersion: 123.0.2420.97 (ba5f45140663..., userDataDir: C:\windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15a663fcbb5be71639cc55112eb6364e
+*** Element info: {Using=xpath, value=.//input[contains(@placeholder,"user name")]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":".//input[contains(@placeholder,"user name")]"}
+  (Session info: MicrosoftEdge=123.0.2420.97)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'BDC14-L-151FN8H', ip: '192.168.1.129', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 123.0.2420.97, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:49168}, msedge: {msedgedriverVersion: 123.0.2420.97 (ba5f45140663..., userDataDir: C:\windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15a663fcbb5be71639cc55112eb6364e
+*** Element info: {Using=xpath, value=.//input[contains(@placeholder,"user name")]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy12.sendKeys(Unknown Source)
+at com.webapp.pages.Page1HtmlElements.triggerAllElements(Page1HtmlElements.java:25)
+at com.qa.TestCases.TestRunIntegration.runIntegrationTestPage1Ele(TestRunIntegration.java:51)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runIntegrationTestPage1Ele -->
-        <test-method status="PASS" signature="runIntegrationTestPage2Ele()[pri:4, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="runIntegrationTestPage2Ele" duration-ms="16402" started-at="2021-01-07T17:02:57 IST" finished-at="2021-01-07T17:03:14 IST">
+        <test-method signature="runIntegrationTestPage2Ele()[pri:4, instance:com.qa.TestCases.TestRunIntegration@68999068]" started-at="2024-04-16T00:21:18 IST" name="runIntegrationTestPage2Ele" finished-at="2024-04-16T00:21:18 IST" duration-ms="29" status="FAIL">
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Unresolved compilation problem: 
+The method getScreenshot(String) in the type BaseConfig is not applicable for the arguments (WebElement, String)
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Unresolved compilation problem: 
+The method getScreenshot(String) in the type BaseConfig is not applicable for the arguments (WebElement, String)
+
+at com.webapp.pages.Page2HtmlElements.triggerAllAdvElements(Page2HtmlElements.java:42)
+at com.qa.TestCases.TestRunIntegration.runIntegrationTestPage2Ele(TestRunIntegration.java:63)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runIntegrationTestPage2Ele -->
-        <test-method status="PASS" signature="runCanvas()[pri:5, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="runCanvas" duration-ms="2838" started-at="2021-01-07T17:03:14 IST" finished-at="2021-01-07T17:03:17 IST">
+        <test-method signature="runCanvas()[pri:5, instance:com.qa.TestCases.TestRunIntegration@68999068]" started-at="2024-04-16T00:21:18 IST" name="runCanvas" finished-at="2024-04-16T00:21:33 IST" duration-ms="15129" status="FAIL">
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+at java.base/java.util.Objects.checkIndex(Objects.java:359)
+at java.base/java.util.ArrayList.get(ArrayList.java:427)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy13.get(Unknown Source)
+at com.webapp.pages.CanvasPageOtherMethods.pickColorMethod(CanvasPageOtherMethods.java:25)
+at com.webapp.pages.CanvasPageOtherMethods.triggerAllCanvasMethods(CanvasPageOtherMethods.java:90)
+at com.qa.TestCases.TestRunIntegration.runCanvas(TestRunIntegration.java:75)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCanvas -->
-        <test-method status="PASS" signature="closeActiveBrowserWindow()[pri:0, instance:com.qa.TestCases.TestRunIntegration@1a8a8f7c]" name="closeActiveBrowserWindow" is-config="true" duration-ms="2485" started-at="2021-01-07T17:03:17 IST" finished-at="2021-01-07T17:03:19 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeActiveBrowserWindow -->
       </class> <!-- com.qa.TestCases.TestRunIntegration -->
-    </test> <!-- AllIntegrationTest -->
-    <test name="AllFucntionalTest" duration-ms="60782" started-at="2021-01-07T17:03:19 IST" finished-at="2021-01-07T17:04:20 IST">
-      <class name="com.qa.TestCases.TestRunFunctional">
-        <test-method status="PASS" signature="rundriverConfig()[pri:1, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="rundriverConfig" duration-ms="9993" started-at="2021-01-07T17:03:19 IST" finished-at="2021-01-07T17:03:29 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- rundriverConfig -->
-        <test-method status="PASS" signature="runHomePage()[pri:2, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="runHomePage" duration-ms="1970" started-at="2021-01-07T17:03:29 IST" finished-at="2021-01-07T17:03:31 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runHomePage -->
-        <test-method status="PASS" signature="RunPage1Testcases()[pri:3, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="RunPage1Testcases" duration-ms="16714" started-at="2021-01-07T17:03:31 IST" finished-at="2021-01-07T17:03:48 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RunPage1Testcases -->
-        <test-method status="PASS" signature="runPage2TestCases()[pri:4, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="runPage2TestCases" duration-ms="28934" started-at="2021-01-07T17:03:48 IST" finished-at="2021-01-07T17:04:17 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runPage2TestCases -->
-        <test-method status="PASS" signature="runCanvas()[pri:5, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="runCanvas" duration-ms="2980" started-at="2021-01-07T17:04:17 IST" finished-at="2021-01-07T17:04:20 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runCanvas -->
-        <test-method status="PASS" signature="closeActiveBrowserWindow()[pri:0, instance:com.qa.TestCases.TestRunFunctional@3e57cd70]" name="closeActiveBrowserWindow" is-config="true" duration-ms="174" started-at="2021-01-07T17:04:20 IST" finished-at="2021-01-07T17:04:20 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeActiveBrowserWindow -->
-      </class> <!-- com.qa.TestCases.TestRunFunctional -->
-    </test> <!-- AllFucntionalTest -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

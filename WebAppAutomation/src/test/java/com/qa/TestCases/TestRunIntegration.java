@@ -64,7 +64,6 @@ public class TestRunIntegration {
 		baseObj.navigateBack();
 		page1Obj.pageClick("canvas");
 	}
-	
 
 	@Test(priority=5, enabled=true)
 	public void runCanvas() throws IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InterruptedException

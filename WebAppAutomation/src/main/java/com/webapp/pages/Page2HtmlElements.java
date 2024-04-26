@@ -56,17 +56,19 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 		searchBarEle.sendKeys("Test");
 	}
 
-	/** Verifying All Side Hover menu Items Navigations**/
-	public void verifySideMenuItemLinks()
+	/** Verifying All Side Hover menu Items Navigations
+	 * @throws InterruptedException **/
+	public void verifySideMenuItemLinks() throws InterruptedException
 	{
 		Actions actObj = new Actions(driver);
-		actObj.moveToElement(sideMenuAboutEle, 80,0).click().release().perform();
+		Thread.sleep(5000);
+		actObj.moveToElement(sideMenuAboutEle).click().release().perform();
 		driver.navigate().back();
-		actObj.moveToElement(sideMenuBlogEle, 80,0).click().release().perform();
+		actObj.moveToElement(sideMenuBlogEle).click().release().perform();
 		driver.navigate().back();
-		actObj.moveToElement(sideMenuProjectsEle, 80,0).click().release().perform();
+		actObj.moveToElement(sideMenuProjectsEle).click().release().perform();
 		driver.navigate().back();
-		actObj.moveToElement(sideMenucontactEle, 80,0).click().release().perform();
+		actObj.moveToElement(sideMenucontactEle).click().release().perform();
 		driver.navigate().back();
 	}
 
@@ -172,12 +174,15 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 	/** Verification of Chat box functionality **/ 
 	public void verifyChatBox()
 	{
-		openChatBtnEle.click();
-		msgTextAreaEle.sendKeys("A Big Hi to you!");
-		sendBtnEle.click();
+		
+		clickElement(openChatBtnEle);
+		inputKeys(msgTextAreaEle, "A Big Hi to you!");
+		clickElement(sendBtnEle);
+		System.out.println(getEleText(chatmessageTxtEle));
+		
 		driver.navigate().back();
-		openChatBtnEle.click();
-		closeBtnEle.click();
+		clickElement(closeBtnEle);
+	
 	}
 
 	/** Verify search bar input **/

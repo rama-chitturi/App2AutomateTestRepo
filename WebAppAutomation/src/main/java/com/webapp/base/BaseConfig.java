@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -33,51 +34,91 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseConfig {
 
 	public static WebDriver driver;
 	public static Properties prop;
+	public static ChromeOptions chromeopt;
+	public static EdgeOptions edgeOpt;
+	public static WebDriverWait wait;
 	public BaseConfig() throws IOException
 	{
-		FileInputStream fis = new FileInputStream("src\\main\\java\\com\\webapp\\config\\configDetails.properties");
+		FileReader fis = new FileReader("src\\main\\java\\com\\webapp\\config\\configDetails.properties");
 		prop=  new Properties();
 		prop.load(fis);
+		
 	}
 
-	public void driverConfig()
+	public static void driverConfig() throws IOException
 	{
-		System.setProperty("webdriver.chrome.driver", "Drivers//chromedriver.exe");
-		driver = new ChromeDriver();
+		try
+		{
+//		System.setProperty("webdriver.chrome.driver", "Drivers//chromedriver.exe");
+//		driver = new ChromeDriver();
+		
+//		chromeopt = new ChromeOptions();
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver(chromeopt);
+		
+		WebDriverManager.edgedriver().setup();
+		driver = new EdgeDriver();
+				
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get(prop.getProperty("urlHome"));
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			getScreenshot(new Throwable().getStackTrace()[0].getMethodName());
+		}
 	}
 
-	public void driverConfigWithURL(String url)
+	public void driverConfigWithURL(String url) throws IOException
 	{
+		try
+		{
 		System.setProperty("webdriver.chrome.driver", "Drivers//chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get("https://rama-chitturi.github.io/App2AutomateRepo/WebSite2Automate/Pages/"+url+".html");
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			getScreenshot(new Throwable().getStackTrace()[0].getMethodName());
+		}
 	}
 
-	public void waitForEleLocated(WebElement element)
+	public void waitForEleLocated(WebElement element) throws IOException
 	{
-		WebDriverWait wait =  new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By) element));
+		try {
+		wait =  new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			getScreenshot(new Throwable().getStackTrace()[0].getMethodName());
+		}
 	}
 	public void waitForEleClickable(WebElement element)
 	{
-		WebDriverWait wait =  new WebDriverWait(driver, 30);
+		wait =  new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	public void alertmessage(String message)
@@ -87,7 +128,7 @@ public class BaseConfig {
 		JOptionPane.showMessageDialog(f,message,"Alert",JOptionPane.WARNING_MESSAGE);  
 	}
 
-	public void getScreenshot(WebElement ele, String fileName) throws IOException
+	public void getEleScreenshot(WebElement ele, String fileName) throws IOException
 	{
 		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		BufferedImage fullImage = ImageIO.read(screenshotFile);
@@ -100,6 +141,11 @@ public class BaseConfig {
 		File elementScreenshotFilePath = new File("Files\\Screenshots\\"+fileName+".png");
 		FileHandler.copy(screenshotFile, elementScreenshotFilePath);
 
+	}
+	public void getScreenshot(String filename) throws IOException {
+		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File filePath = new File("Files\\Screenshots\\"+filename+".png");
+		FileHandler.copy(screenshot, filePath);
 	}
 
 	public ArrayList<Object> excelGetData(String sheetName, int rowNum, int colNum) throws InvalidFormatException, IOException
@@ -145,17 +191,36 @@ public class BaseConfig {
 		fos.close();
 	}
 
-	public void clickElement(WebElement ele)
+	public void clickElement(WebElement ele) throws IOException
 	{
+		waitForEleLocated(ele);
 		ele.click();
+	}
+	public void inputKeys(WebElement ele, String inputToSend) throws IOException
+	{
+		waitForEleLocated(ele);
+		ele.sendKeys(inputToSend);
+	}
+	public String getEleText(WebElement ele) throws IOException
+	{
+		waitForEleLocated(ele);
+		String text = ele.getText();
+		return text;
 	}
 
 	public void navigateBack()
 	{
 		driver.navigate().back();
 	}
+	public void acceptAlert(String acceptStatus)
+	{
+		if(acceptStatus.equalsIgnoreCase("accept"))
+		driver.switchTo().alert().accept();
+		else
+			driver.switchTo().alert().dismiss();
+	}
 
-	public void closeBrowserWindow()
+	public static void closeBrowserWindow()
 	{
 		driver.close();
 	}
@@ -204,5 +269,7 @@ public class BaseConfig {
 			loopCount++;
 		}
 	}
+	
+
 
 }

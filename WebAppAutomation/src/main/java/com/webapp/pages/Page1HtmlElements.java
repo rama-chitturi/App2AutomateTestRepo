@@ -55,14 +55,18 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 		driver.navigate().back();
 	}
 	
-	/** Validation of user credentials from given data **/
+	/** Validation of user credentials from given data 
+	 * @throws IOException **/
 	
-	public void verifyUserCredential(String username, String email)
+	public void verifyUserCredential(String username, String email) throws IOException
 	{
-		userNameEle.sendKeys(username);
-		mailIdEle.sendKeys(email);
-		emailCheckBtnEle.click();
-		driver.switchTo().alert().accept();
+		inputKeys(userNameEle, username);
+		inputKeys(mailIdEle, email);
+		
+	}
+	public void verifyCredentialsSubmission() throws IOException {
+		clickElement(emailCheckBtnEle);
+		
 	}
 		
 	/**Validation of User credentials using data-driven**/
@@ -228,6 +232,10 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 	}
 
 
+	public void navigateToHome() throws IOException
+	{
+		clickElement(page1GoHomeEle);
+	}
 	public void pageClick(String pageName)
 	{
 		switch(pageName)

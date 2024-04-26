@@ -131,6 +131,9 @@ WebElement emailCheckBtnEle;
    @FindBy(xpath=".//button[ @type='submit']")
    WebElement sendBtnEle;
    
+   @FindBy(xpath=".//p")
+   WebElement chatmessageTxtEle;
+   
    @FindBy(xpath=".//button[text()='Close']")
    WebElement closeBtnEle;
    
@@ -151,7 +154,7 @@ WebElement emailCheckBtnEle;
    @FindBy(xpath = ".//div[@class=\"tooltip\"]/span")
    WebElement tooltipTextEle;
    
-   @FindBy(xpath = ".//div[@class=\"back-button\"]/img")
+   @FindBy(xpath = ".//div/img[@alt=\"Go to Html elements page\"]")
    WebElement backArrowBtnEle;
    
    /** Canvas Page Elements **/
@@ -170,6 +173,13 @@ WebElement emailCheckBtnEle;
    
    @FindBy(id="homeBtn")
  	WebElement canvasGoHomeEle;
+   
+   @FindBy(xpath=".//a[text()=\"Back to Home\"]")
+   WebElement page1GoHomeEle;
+   
+   @FindBy(id="homeBtn")
+   WebElement reportsGoHomeEle;
+   
   
    
    

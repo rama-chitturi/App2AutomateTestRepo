@@ -20,7 +20,6 @@ import com.webapp.pages.HomePage;
 public class TestRunUnit {
 	
 	BaseConfig baseObj;
-	Page1HtmlElements htmlPageObj;
 	HomePage hpObj;
 	Page1HtmlElements page1Obj;
 	Page2HtmlElements page2Obj;

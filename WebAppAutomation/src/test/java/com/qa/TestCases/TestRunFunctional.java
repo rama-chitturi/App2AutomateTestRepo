@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -25,7 +26,7 @@ public class TestRunFunctional {
 	CanvasPage canvasObj;
 	CanvasPageOtherMethods canvasOtherObj;
 	
-	@Test(priority=1, enabled = true)
+	@BeforeTest
 	public void rundriverConfig() throws IOException
 	{
 		baseObj = new BaseConfig();

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.TestCases.TestRunFunctional">
+      <class name="com.qa.TestCases.TestRunIntegration">
         <methods>
-          <include name="RunPage1Testcases"/>
-          <include name="runPage2TestCases"/>
+          <include name="runHomePage"/>
+          <include name="runIntegrationTestPage1Ele" invocation-numbers="0"/>
+          <include name="runIntegrationTestPage2Ele"/>
           <include name="runCanvas"/>
         </methods>
-      </class> <!-- com.qa.TestCases.TestRunFunctional -->
+      </class> <!-- com.qa.TestCases.TestRunIntegration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

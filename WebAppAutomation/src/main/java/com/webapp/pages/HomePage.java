@@ -17,8 +17,8 @@ public class HomePage extends BaseConfig
 	@FindBy(xpath=".//img[@alt=\"Go to Html elements page\"]")
 	WebElement HtmlPageBtnEle;
 	
-	@FindBy(xpath="")
-	WebElement PageBtnEle;
+	@FindBy(xpath=".//div[3]/img")
+	WebElement ReportsPageBtnEle;
 	
 	@FindBy(xpath="")
 	WebElement PageBtnEle2;
@@ -28,16 +28,18 @@ public class HomePage extends BaseConfig
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void pageClick(String pageName)
+	public void pageClick(String pageName) throws IOException
 	{
 		switch(pageName)
 		{
-		case "canvas":
-			CanvasPageBtnEle.click();
+		case "HTML":
+			clickElement(HtmlPageBtnEle);
 			break;
-		case "htmlelements":
-			HtmlPageBtnEle.click();
-			break;
+		case "Canvas":
+			clickElement(CanvasPageBtnEle);
+			break;		
+		case "Reports":
+			clickElement(ReportsPageBtnEle);
 		default:
 			System.out.println("Uh oh! Given page name is not found.");
 		}
