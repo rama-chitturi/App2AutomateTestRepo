@@ -171,8 +171,9 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 
 	}
 
-	/** Verification of Chat box functionality **/ 
-	public void verifyChatBox()
+	/** Verification of Chat box functionality 
+	 * @throws IOException **/ 
+	public void verifyChatBox() throws IOException
 	{
 		
 		clickElement(openChatBtnEle);

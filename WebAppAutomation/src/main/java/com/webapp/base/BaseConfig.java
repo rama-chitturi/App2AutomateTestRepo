@@ -58,7 +58,7 @@ public class BaseConfig {
 		
 	}
 
-	public static void driverConfig() throws IOException
+	public void driverConfig() throws IOException
 	{
 		try
 		{
@@ -128,7 +128,7 @@ public class BaseConfig {
 		JOptionPane.showMessageDialog(f,message,"Alert",JOptionPane.WARNING_MESSAGE);  
 	}
 
-	public void getEleScreenshot(WebElement ele, String fileName) throws IOException
+	public void getScreenshot(WebElement ele, String fileName) throws IOException
 	{
 		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		BufferedImage fullImage = ImageIO.read(screenshotFile);

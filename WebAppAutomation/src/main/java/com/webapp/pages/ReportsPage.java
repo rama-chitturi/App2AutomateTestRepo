@@ -8,7 +8,7 @@ public class ReportsPage extends HTMLPageWebElements{
 		HTMLPageWebElements htmlEleObj= new HTMLPageWebElements();
 	}
 
-	public void navigateToHome()
+	public void navigateToHome() throws IOException
 	{
 		clickElement(reportsGoHomeEle);
 	}
