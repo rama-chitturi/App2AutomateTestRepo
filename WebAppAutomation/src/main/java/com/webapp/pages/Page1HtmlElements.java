@@ -18,28 +18,21 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 		HTMLPageWebElements htmlEleObj= new HTMLPageWebElements();
 	}
 	
-	/**Trigger method to check all elements basic fucntionality **/
-	public void triggerAllElements(String userNameData, String userEmailData)
+	/**Trigger method to check all elements basic fucntionality 
+	 * @throws IOException 
+	 * @throws InterruptedException **/
+	public void triggerAllElements(String userNameData, String userEmailData) throws IOException, InterruptedException
 	{
-		
-		userNameEle.sendKeys(userNameData);
-		mailIdEle.sendKeys(userEmailData);
-		emailCheckBtnEle.click();
-		driver.switchTo().alert().accept();
-		radioBtn1Ele.click();
-		radioBtn2Ele.click();
-		checkBox1Ele.click();
-		checkBox2Ele.click();
-		Select scObj= new Select(dropdownEle);
-		scObj.selectByIndex(2);
-		File file =  new File("Files\\UploadFileFormats\\DocFormatFile.docx");
-		fileUploadBtnEle.sendKeys(file.getAbsolutePath());
-		
-		Actions acObj =  new Actions(driver);
-		acObj.moveToElement(dropupEle).build().perform();
-		dropupItem1Ele.click();
-		dropupItem2Ele.click();
-		advHtmlPageBtnEle.click();
+		verifyMenuItemLinks();
+		verifyUserCredential(userNameData,userEmailData);
+		verifyCredentialsSubmission();
+		verifyGroupRadioButton();
+		verifyCheckBox();
+		verifyDropdownItems();
+		verifyUploadFileFormat();
+		verifyDropupButton();
+		verifyLinkNavigation();
+	
 	}
 	
 	/** Verification of all Menu header items link navigations**/
@@ -66,6 +59,7 @@ public class Page1HtmlElements extends HTMLPageWebElements {
 	}
 	public void verifyCredentialsSubmission() throws IOException {
 		clickElement(emailCheckBtnEle);
+		driver.switchTo().alert().accept();
 		
 	}
 		

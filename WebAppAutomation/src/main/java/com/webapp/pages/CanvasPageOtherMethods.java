@@ -75,21 +75,22 @@ public class CanvasPageOtherMethods extends HTMLPageWebElements{
 	public void verifyHomeNavigation()
 	{
 		canvasGoHomeEle.click();
-		System.out.println("Ohooooo!!!! success in 2021... Happy New Year");			
+		System.out.println("Oooooo!!! success in 2021 Happy New Year, success in 2024 and in future... ");			
 	}
-
+	
 	public void triggerAllCanvasMethods() throws IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InterruptedException
 	{
 		Class className = CanvasPage.class;
 		canvasObj = new CanvasPage();
 		Method[] methodList = className.getDeclaredMethods();
 		int colorCount=0;
-		for(Method loopCount : methodList)
+		for(Method methodCount : methodList)
 		{
-
-			pickColorMethod(colorCount);
-			loopCount.invoke(canvasObj, null);
+			System.out.println("Cleared Canvas for");
 			clearCanvasMethod();
+			pickColorMethod(colorCount);
+			methodCount.invoke(canvasObj, null);
+			System.out.println(methodCount.getName());
 			colorCount++;
 		}
 
