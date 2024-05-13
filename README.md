@@ -8,20 +8,27 @@
 
 **Automation tool**
 - Selenium
+
 **Programming Language **
 - Java
+
 **Build tool  **
 - Maven
+
 **Design Patterns**
 - POM (Page Object Model)
 - Page Factory to support POM
+  
 **Test Frameworks **
 - BDD using Cucumber tool
 - TestNG
 - Data Driven
+
 **Report generation frameworks**
 - Extent report
+  
 ** Version Control **
 - Git
+  
 ** CI/CD Integration **
 - Jenkins
