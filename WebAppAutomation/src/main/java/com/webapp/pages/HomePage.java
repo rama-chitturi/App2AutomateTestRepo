@@ -40,6 +40,7 @@ public class HomePage extends BaseConfig
 			break;		
 		case "Reports":
 			clickElement(ReportsPageBtnEle);
+			break;
 		default:
 			System.out.println("Uh oh! Given page name is not found.");
 		}

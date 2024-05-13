@@ -17,6 +17,8 @@ public class A2AThreadTest extends Thread{
 		System.out.println("Thread name is: "+Thread.currentThread().getName());
 		try {
 			baseObj.setupDriver(browserName);
+			baseObj.openotherURl();
+			baseObj.HandleWindows();
 		} 
 		catch (Exception e) {
 			
@@ -24,7 +26,7 @@ public class A2AThreadTest extends Thread{
 		}
 		finally
 		{
-			baseObj.closeBrowser();
+			//baseObj.closeBrowser();
 		}
 	}
 	

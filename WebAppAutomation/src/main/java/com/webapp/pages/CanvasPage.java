@@ -94,9 +94,6 @@ public class CanvasPage extends HTMLPageWebElements{
 	}
 	
 
-	public void navigateToHome() throws IOException
-	{
-		clickElement(canvasGoHomeEle);
-	}
+
 
 }

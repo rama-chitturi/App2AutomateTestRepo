@@ -2,10 +2,8 @@ package com.qa.parallel;
 
 import java.io.IOException;
 
-
 import com.webapp.base.BaseConfig;
 import com.webapp.pages.CanvasPage;
-
 import com.webapp.pages.HomePage;
 import com.webapp.pages.Page1HtmlElements;
 import com.webapp.pages.ReportsPage;
@@ -57,7 +55,7 @@ public void user_clicks_on_home_page_from_html_page() throws IOException {
 @And("user clicks on home page from canvas page")
 public void ser_clicks_on_home_page_from_canvas_page() throws IOException {
     canvasObj = new CanvasPage();
-    canvasObj.navigateToHome();
+    canvasObj.navigateBack();
 }
 
 @And("user clicks on home page from reports page")

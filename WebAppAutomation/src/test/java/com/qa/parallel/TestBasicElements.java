@@ -1,12 +1,7 @@
 package com.qa.parallel;
 
 import java.io.IOException;
-import java.lang.reflect.Method;
 
-import org.openqa.selenium.TakesScreenshot;
-import org.testng.Assert;
-
-import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.webapp.base.BaseConfig;
 import com.webapp.pages.Page1HtmlElements;
 

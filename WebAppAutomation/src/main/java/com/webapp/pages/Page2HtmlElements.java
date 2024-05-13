@@ -17,43 +17,18 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 
 	public void triggerAllAdvElements() throws InterruptedException, IOException, AWTException
 	{
-		Actions actObj = new Actions(driver);
-		actObj.moveToElement(sideMenuAboutEle, 80,0).click().release().perform();
-		driver.navigate().back();
-		actObj.moveToElement(sideMenuBlogEle, 80,0).click().release().perform();
-		driver.navigate().back();
-		actObj.moveToElement(sideMenuProjectsEle, 80,0).click().release().perform();
-		driver.navigate().back();
-		actObj.moveToElement(sideMenucontactEle, 80,0).click().release().perform();
-		driver.navigate().back();
-
-
-		actObj.clickAndHold(dragEle).moveToElement(dropEle).release().build().perform();
-
-		modalBtnEle.click();
-		modalCloseBtnEle.click();
-
-		alertBtnEle.click();
-		driver.switchTo().alert().accept();
-
-		snackBarBtnEle.click();
-
-		actObj.moveToElement(flipCardFrontEle).build().perform();
-		getScreenshot(flipCardBackEle,"Flip_Card_Back_Image");
-
-		thumbsUpBtnEle.click();
-		thumbsDownBtnEle.click();
-
-		sliderSwitchBtnEle.click();
-
-		openChatBtnEle.click();
-		msgTextAreaEle.sendKeys("A Big Hi to you!");
-		sendBtnEle.click();
-		driver.navigate().back();
-		openChatBtnEle.click();
-		closeBtnEle.click();
-
-		searchBarEle.sendKeys("Test");
+		verifySideMenuItemLinks();
+		verifyDragNDrop();
+		verifyModalButton();
+		verifyAlertButton();
+		verifySnackBar();
+		verifyFlipcard();
+		verifyThumbSwitching();
+		verifySliderSwitching();
+		verifyChatBox();
+		verifySearchBar("Automation");
+		verifySearchFucntionality("Automation");
+		verifyBackArrowNavigation();
 	}
 
 	/** Verifying All Side Hover menu Items Navigations
@@ -82,7 +57,7 @@ public class Page2HtmlElements extends HTMLPageWebElements {
 		else
 			System.out.println("Card is not dropped to destination");
 	}
-	/**Verifying Modal open and close(By cliking on X and outside of modal) **/
+	/**Verifying Modal open and close(By clicking on X and outside of modal) **/
 	public void verifyModalButton() 
 	{
 		modalBtnEle.click();

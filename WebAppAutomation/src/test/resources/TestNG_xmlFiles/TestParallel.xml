@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParallelClassExecution" parallel="classes" thread-count="3" >
+<parameter name="searchData" value="Test"></parameter>
+<parameter name="selectInitialPage" value="HTML"></parameter>
+	<test name="AllFunctionalTest"  >
+		<classes>
+		<class name="com.qa.testcases.FunctionalTest" />
+		<class name="com.qa.testcases.ModulesTest" /> 
+		</classes>
+	</test> <!-- TestFunctional -->
+	
+</suite> <!-- Suite -->
