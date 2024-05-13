@@ -4,7 +4,7 @@
 **Scope:**
 - To test the elements actions and its fucntionlaity for the web view using the application https://rama-chitturi.github.io/App2AutomateRepo/WebSite2Automate/Pages/HomePage.html
 
-**Automtion Framework**
+**Automtion Framework Info**
 
 **Automation tool**
 - Selenium
@@ -30,5 +30,5 @@
 **Version Control**
 - Git
   
-** CI/CD Integration **
+**CI/CD Integration**
 - Jenkins
