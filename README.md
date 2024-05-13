@@ -7,10 +7,10 @@
 **Automtion Framework Info**
 
 **Automation tool**
-- Selenium
+- Selenium - v4
 
 **Programming Language**
-- Java
+- Java - v17
 
 **Build tool**
 - Maven
